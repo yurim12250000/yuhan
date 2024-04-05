@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 6;
+    overflow: hidden;
+}
+#d_Top {
+    text-align: right;
+    background-color: #FFEBCD;
+    flex: 4;
+    padding: 15px;
+}
+#d_Top span {
+    display: block;
+}
+#d_Top #student_id {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+    color: #D2691E;
+}
+#d_Top #student_name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #483D8B;
+    font-size: large;
+}
+.inner-container {
+    display: flex;
+    flex: 1;
+}
+#d_Left {
+    flex: 1;
+    background-color: #BC8F8F;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+}
+#d_Right {
+    flex: 4;
+    background-color: #DEB887;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: left; 
+    padding-left: 20px; 
+}
+.button {
+    margin: 8px;
+    padding: 8px;
+    background-color: #E9967A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 230px;
+}
+#b1{
+    background-color: bisque;
+    color: black;
+}
+#b2{
+    background-color: antiquewhite;
+    color: black;
+}
+.game-description {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 40px;
+}
