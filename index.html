@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="d_Top">
+        <span id="student_id">학번:202227056</span> <span id="student_name">이름:고유림</span>
+    </div>
+        
+    <div class="container">
+        <div class="inner-container">
+            <div id="d_Left">
+                <button id="b1" class="button">버튼 1</button>
+                <button id="b2" class="button">버튼 2</button>
+            </div>
+            
+            <div id="d_Right" style="justify-content: center; align-items: center; text-align: center;">
+                빈화면
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("b1").addEventListener("click", function() {
+            var canvas = document.createElement("canvas");
+            canvas.width = 400; 
+            canvas.height = 400;
+            var ctx = canvas.getContext("2d");
+
+            ctx.beginPath();
+            ctx.arc(200, 200, 200, 0, 2 * Math.PI); 
+            ctx.fillStyle = "#8B4513"; 
+            ctx.fill();
+                        
+            var dRight = document.getElementById("d_Right");
+            dRight.innerHTML = ''; 
+            dRight.appendChild(canvas);
+        });
+
+        document.getElementById("b2").addEventListener("click", function() {
+            var dRight = document.getElementById("d_Right");
+            dRight.style.justifyContent = "flex-start"; 
+            dRight.style.alignItems = "flex-start"; 
+            dRight.style.textAlign = "left"; 
+
+            dRight.innerHTML = ''; 
+
+            var gameScreenshot = document.createElement("img");
+            gameScreenshot.src = "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMTVfMjIy/MDAxNzEwNTA3OTg2Mzk5.i4AdW8a52CQo_pl_gYMJ0QJXJ1y9hmYfQ2mjSlz_U1Qg.MCa52AfGvLFfbrb7-OJreHxFAoclf7_1DN0hUxjMuocg.PNG/IMG_3604.png?type=w800";
+            gameScreenshot.style.width = "800px";
+            gameScreenshot.style.height = "550px";
+            gameScreenshot.style.marginRight = "10px"; 
+            gameScreenshot.style.maxWidth = "none";
+            dRight.appendChild(gameScreenshot);
+
+            var gameDescriptionList = document.createElement("ul");
+            gameDescriptionList.classList.add("game-description");
+                
+            var gameDescriptionItems = [
+                "게임이름: 캣히어로",
+                "출시년도: 2023년",
+                "장르: RPG",
+                "좋아하는 이유: 이 게임은 방치형 RPG라 게임에 많은 시간을 쏟지 않아도 자동 진행, 전투 등 으로 캐릭터가 성장하고 여러 무기와 스킬, 동료 가 다양해서 재미있다. 게임 안에서도 퀘스트와 던전이 있어 아이템을 모으기 어렵지가 않다. 동료, 스킬, 룬 뽑기권도 이벤트를 통해 많이 뿌려주고 업데이트가 자주 있는데 업데이트 할때마다 점검 보상으로 아이템도 많이 준다. 게임 캐릭터에 원하는 대포 외형이나 스킨 등 을 입힐 수 있어 내 캐릭터를 꾸미는 재미도 있다. 또 생선 레벨이 올라갈수록 생선의 모양이나 색이 변해서 생선 레벨을 올리는 재미도 있다.",
+            ];
+            gameDescriptionItems.forEach(function(itemText) {
+                var listItem = document.createElement("li");
+                listItem.textContent = itemText;
+                gameDescriptionList.appendChild(listItem);
+            });
+            dRight.appendChild(gameDescriptionList);
+        });
+    </script>
+</body>
+</html>
